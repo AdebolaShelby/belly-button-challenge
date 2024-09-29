@@ -10,7 +10,7 @@
 * Metadata Panel: Shows demographic information for the selected individual, such as age, gender, and location.
 
 
-#Files
+# Files
 1. app.js
 * This JavaScript file contains all the code for generating the interactive elements of the dashboard using the Plotly and D3 libraries. The major sections of the code are:
 
