@@ -1,5 +1,6 @@
 # Belly Button Biodiversity Dashboard
 * This project creates an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes found in human navels. The dataset reveals that a small number of microbial species (called OTUs) are found in more than 70% of people, while the rest are relatively rare.
+![Belly Button Biodiversity Dashboard](<Screenshot 2024-09-29 091628.png>)
 
 # Features
 * The dashboard provides the following functionality:

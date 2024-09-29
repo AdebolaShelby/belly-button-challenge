@@ -20,14 +20,17 @@ d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").th
 // Listen for changes in the dropdown menu
 d3.selectAll("#selDataset").on("change", updateCharts);
 
-// Update the charts and metadata when a new individual is selected
+// Function to update all charts and metadata when a new sample is selected
 function updateCharts() {
   let dropdown = d3.select("#selDataset");
   let selectedId = dropdown.property("value");
 
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
+      // Get the selected sample and its metadata
       let selectedSample = data.samples.filter(sample => sample.id === selectedId)[0];
       let selectedMeta = data.metadata.filter(meta => meta.id == selectedId)[0]; // Get selected sample's metadata
+
+      // Update charts and metadata
       buildBarChart(selectedSample);
       buildBubbleChart(selectedSample);
       buildMetadata(selectedMeta);  // Update the metadata
@@ -56,6 +59,7 @@ function buildBarChart(sample) {
       width: 800  // Set the width of the chart
   };
 
+  // Update the bar chart
   Plotly.newPlot("bar", [trace], layout);
 }
 
@@ -88,6 +92,7 @@ function buildBubbleChart(sample) {
       width: 1000  // Set the width of the chart
   };
 
+  // Update the bubble chart
   Plotly.newPlot("bubble", [trace], layout);
 }
 
