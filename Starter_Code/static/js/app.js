@@ -11,7 +11,7 @@ d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").th
 
   // Initialize the charts and metadata with the first individual
   let firstSample = sampleData[0];
-  let firstMeta = metadata.filter(meta => meta.id == firstSample.id)[0]; // Get first sample's metadata
+  let firstMeta = metadata.filter(meta => meta.id == firstSample.id)[0]; 
   buildBarChart(firstSample);
   buildBubbleChart(firstSample);
   buildMetadata(firstMeta);
@@ -28,12 +28,12 @@ function updateCharts() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
       // Get the selected sample and its metadata
       let selectedSample = data.samples.filter(sample => sample.id === selectedId)[0];
-      let selectedMeta = data.metadata.filter(meta => meta.id == selectedId)[0]; // Get selected sample's metadata
+      let selectedMeta = data.metadata.filter(meta => meta.id == selectedId)[0]; 
 
       // Update charts and metadata
       buildBarChart(selectedSample);
       buildBubbleChart(selectedSample);
-      buildMetadata(selectedMeta);  // Update the metadata
+      buildMetadata(selectedMeta);  
   });
 }
 
@@ -56,7 +56,7 @@ function buildBarChart(sample) {
   let layout = {
       title: `Top 10 OTUs for Individual ${sample.id}`,
       margin: { t: 30, l: 150 },
-      width: 800  // Set the width of the chart
+      width: 800  
   };
 
   // Update the bar chart
@@ -76,9 +76,9 @@ function buildBubbleChart(sample) {
       text: otu_labels,
       mode: "markers",
       marker: {
-          size: sample_values,      // Size of the bubbles
-          color: otu_ids,           // Color of the bubbles
-          colorscale: "Earth"       // You can choose other color scales as well
+          size: sample_values,      
+          color: otu_ids,           
+          colorscale: "Earth"       
       }
   };
 
@@ -89,7 +89,7 @@ function buildBubbleChart(sample) {
       yaxis: { title: "Sample Values" },
       showlegend: false,
       height: 600,
-      width: 1000  // Set the width of the chart
+      width: 1000  
   };
 
   // Update the bubble chart
